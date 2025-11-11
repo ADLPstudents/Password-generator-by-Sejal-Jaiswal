@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="brand">Password Generator</h1>
+      <p class="tagline">Create strong, unique passwords instantly.</p>
+    </header>
+
+    <main class="page">
+      <section class="card generator">
+        <div class="output-row">
+          <input type="text" class="password-output" id="password-output" placeholder="Your password will appear here" readonly>
+          <button class="btn ghost" id="copy-btn" aria-label="Copy password">Copy</button>
+        </div>
+
+        <div class="row">
+          <label for="length-input" class="row-label">Length</label>
+          <div class="range-wrap">
+            <input type="range" id="length-input" class="range" min="6" max="64" value="16">
+            <span class="range-value" id="length-value">16</span>
+          </div>
+        </div>
+
+        <div class="row grid">
+          <label class="check">
+            <input type="checkbox" id="include-lower" checked>
+            <span>Lowercase (a-z)</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="include-upper" checked>
+            <span>Uppercase (A-Z)</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="include-numbers" checked>
+            <span>Numbers (0-9)</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="include-symbols">
+            <span>Symbols (!@#$…)</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="exclude-ambiguous">
+            <span>Exclude ambiguous (O0, l1, etc.)</span>
+          </label>
+        </div>
+
+        <div class="row spread">
+          <div class="strength" aria-live="polite">
+            <span class="strength-label">Strength:</span>
+            <span class="strength-indicator" id="strength-indicator" data-level="weak">Weak</span>
+          </div>
+          <button class="btn primary" id="generate-btn">Generate</button>
+        </div>
+      </section>
+
+      <section class="help">
+        <details>
+          <summary>Tips for stronger passwords</summary>
+          <ul>
+            <li>Use at least 12–16 characters.</li>
+            <li>Mix lowercase, uppercase, numbers, and symbols.</li>
+            <li>Avoid common words and patterns.</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>Developed by Sejal Jaiswal</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
